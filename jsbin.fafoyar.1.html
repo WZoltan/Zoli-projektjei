@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by WZoltan (http://jsbin.com/fafoyar/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="[fizbuzz négyzetek]">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<canvas id="myCanvas" width="450" height="350" style="border:1px solid black;"></canvas>
+<script id="jsbin-javascript">
+var c=document.getElementById('myCanvas').getContext('2d')
+
+var x=1;
+
+
+
+for (x=0;x<150; x=x+10)
+{
+  if ((x+10)%150===0){c.fillStyle="rgba(9, 134, 22, 0.64)";}
+  else if ((x+10)%30===0){c.fillStyle="rgba(134, 159, 233, 0.64)";}
+  else if ((x+10)%50===0){c.fillStyle="rgba(221, 206, 70, 0.64)";}
+  else {c.fillStyle="rgba(22, 25, 28, 0.64)";}
+  c.fillRect (x,x,50,50);}
+</script>
+</body>
+</html>

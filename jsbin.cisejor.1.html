@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by WZoltan (http://jsbin.com/cisejor/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice JavaScript by drawing</title>
+</head>
+<body>
+  <canvas id="myCanvas" height="300" width="450" style="border: 1px solid black"></canvas>
+<script id="jsbin-javascript">
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+function filledStar(x,y,a) {
+context.beginPath ();
+context.fillStyle = "#ea9fb8";
+	context.moveTo (x, y);
+	context.lineTo (x+a, y);
+	context.lineTo (x+a/6, y+2*a/3);
+context.lineTo (x+a/2, y-a/3);
+	context.lineTo (x+5*a/6,y+2*a/3);
+context.lineTo (x, y);
+	context.closePath ();
+ context.fill ();
+	return(x,y,a);
+}
+
+filledStar(40,50,75);
+filledStar(130,120,100);
+filledStar(250,220,150);
+</script>
+</body>
+</html>

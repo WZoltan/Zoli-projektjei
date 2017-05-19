@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by WZoltan (http://jsbin.com/hizesod/8/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+{ margin: 0; padding: 0; }
+html {
+  background-color: rgba(247,247,247,1);
+  font-family: Arial;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(6,69,173,1)
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#fejlec1 {
+  float: right;
+  height : 30px;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 20px;
+  background-color: rgba(255,255,255,1);
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(95,95,95,1);
+}
+
+.fejlec1menu {
+  padding-left: 8px;
+  float: right;
+  font-size: 12px;
+}
+
+
+
+#fejlec2 {
+  float: right;
+  width: 100%;
+  height : 40px;
+  border-bottom: 1px solid rgba(167,215,249,1);
+  background: linear-gradient(rgba(255,255,255,1), rgba(247,247,247,1));
+ 
+}
+
+
+
+#fejlec2jobb {
+  height: 100%;
+  width: 470px;
+  float: right;
+}
+
+
+#kereso {
+  float: right;
+  margin-right: 30px;
+  height: 100%;
+  width: 280px;
+}
+
+#keresoletolas {
+  height: 6px;
+}
+
+
+.keret {
+  width: 280px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-left: 8px;
+  margin-right: 20px;
+  border: 1px solid rgba(150,150,150,1);
+}
+
+.nagyito {
+  float: right;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 12px;
+  line-height: 1.6;
+  text-decoration: none;
+  color: rgba(95,95,95,1);
+}
+
+.nagyito:hover {
+  text-decoration: none;
+}
+
+
+.search {
+  padding-left: 5px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(170,170,170,1);
+}
+
+#menuletolas {
+  height: 10px;
+}
+
+#view { 
+  float: right;
+  height : 100%;
+  width: 79px;
+  text-align: center;
+  border-right: 1px solid rgba(167,215,249,1);
+  font-size: 12px;
+  line-height: 1.6;
+  background: linear-gradient(rgba(255,255,255,1), rgba(232,242,248,1));
+}
+
+#edit {
+  float: right;
+  height : 100%;
+  width: 35px;
+  text-align: center;
+  border-right: 1px solid rgba(167,215,249,1);
+  font-size: 12px;
+  line-height: 1.6;
+  background: linear-gradient(rgba(255,255,255,1), rgba(232,242,248,1));
+}
+
+
+#read {
+  float: right;
+  height : 100%;
+  width: 40px;
+  text-align: center;
+  border-right: 1px solid rgba(167,215,249,1);
+  border-left: 1px solid rgba(167,215,249,1);
+  border-bottom: 1px solid white;
+  background-color: white;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.menu-betu {
+  font-size: 12px;
+}
+
+#fejlec2bal {
+  height: 100%;
+  width: 260px;
+  float: left;
+}
+
+#ures-balsav {
+  float: left;
+  height: 100%;
+  width: 177px;
+  border-bottom: 1px solid rgba(247,247,247,1);
+}
+
+#article {
+  float: left;
+  height : 100%;
+  width: 45px;
+  text-align: center;
+  border-right: 1px solid rgba(167,215,249,1);
+  border-left: 1px solid rgba(167,215,249,1);
+  border-bottom: 1px solid white;
+  background-color: white;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+#talk {
+  float: left;
+  height : 100%;
+  width: 35px;
+  text-align: center;
+  border-right: 1px solid rgba(167,215,249,1);
+  font-size: 12px;
+  line-height: 1.6;
+  background: linear-gradient(rgba(255,255,255,1), rgba(232,242,248,1));
+}
+
+
+#fooldal {
+    width: 100%;
+    margin: 0px;
+}
+
+
+#bal-oldal {
+  float:left;
+  width : 177px;
+  margin: 0;
+}
+
+
+
+
+
+#logo {
+  position: relative;
+  top: -77px;
+  width : 135px;
+  margin: 0 auto;
+}
+
+.wiki-logo {
+    width : 135px;
+}
+
+
+#fomenu {
+    margin-top: -59px;
+    margin-left: 27px;
+    margin-right: 27px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+ol {
+  list-style-type: none;
+}
+
+
+
+.sav {
+  height: 4px;
+}
+
+
+.vonal {
+  height: 1px;
+   margin-left: 27px;
+   margin-right: 27px;
+ 
+}
+
+
+.feher-szurke {
+  height: 100%;
+  width: 10%;
+  background: linear-gradient(to left, rgba(247,247,247,1), rgba(216,216,216,1));
+  float:right;
+}
+
+.szurke {
+  height: 100%;
+  width: 80%;
+  background-color: rgba(216,216,216,1);
+  float:right;
+}
+
+.szurke-feher {
+  height: 100%;
+  width: 10%;
+  background: linear-gradient(to left, rgba(216,216,216,1), rgba(247,247,247,1));
+  float:right;
+}
+
+
+
+
+.almenu-cim {
+    margin-left: 22px;
+    margin-right: 22px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(95,95,95,1)
+}
+
+
+
+.almenu {
+    margin-left: 39px;
+    margin-right: 22px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+
+
+.fogaskerek {
+  float: right;
+  margin-left: 22px;
+    margin-right: 22px;
+    font-size: 12px;
+    line-height: 1.6;
+  text-decoration: none;
+  color: rgba(95,95,95,1);
+}
+
+
+
+.fogaskerek:hover {
+  text-decoration: none;
+  color: rgba(50,50,50,1);
+}
+
+.editlinks {
+    margin-left: 39px;
+    margin-right: 22px;
+    font-size: 12px;
+    line-height: 1.6;
+    float: right;
+    text-decoration: none;
+    color: rgba(95,95,95,1);
+}
+
+.editlinks:hover {
+  text-decoration: underline;
+  color: rgba(6,69,173,1)
+}
+
+#jobb-oldal {
+overflow: hidden;
+margin:10 10 10 10;
+Padding-left: 20px;
+Padding-right: 20px;
+Padding-top: 25px;
+background-color: rgba(255,255,255,1);
+border-left: 1px solid rgba(167,215,249,1);
+border-right: 1px solid rgba(167,215,249,1);
+border-bottom: 1px solid rgba(167,215,249,1);
+
+}
+
+h1 {
+  font-family: "Times New Roman";
+  font-style: italic;
+  padding-bottom: 4px;
+}
+
+
+#hosszu-vonal {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(150,150,150,1);
+}
+
+.alcim {
+  padding-top: 6px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#uresbeszuras {
+  height: 20px;
+}
+
+#jobb-kep {
+  float: right;
+  width: 250px;
+  height: 460px;
+  margin-left: 20px;
+  padding: 8px;
+  border: 1px solid rgba(150,150,150,1);
+  background-color: rgba(247,247,247,1);
+}
+
+
+
+.dolt-vastag {
+  width: 100%;
+  text-align: center;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+figure {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+figcaption {
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+#kepmenu1 {
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.9;
+}
+
+.kep-menu-betu {
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+
+#kepmenu2 {
+  float: left;
+  padding-left: 50px;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+
+.folyamatos {
+  float: right;
+  padding-right: 20px;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+
+
+strong {
+  font-style: oblique;
+}
+
+
+.kisindex {
+  font-size: 10px;
+  vertical-align: top;
+}
+
+
+#bal-felso-kep {
+  width: 110px;
+  height: 160px;
+  margin-top: 10px;
+  padding: 5px 20px 10px 20px;
+  font-size: 12px;
+  line-height: 2;
+  border: 1px solid rgba(150,150,150,1);
+  background-color: rgba(247,247,247,1)
+}
+
+
+
+.contents {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.vekony-betu {
+  font-weight: normal;
+}
+
+.bekezdes {
+  padding-left: 20px;
+}
+
+h2 {
+  font-family: "Times New Roman";
+  padding-bottom: 4px;
+}
+
+small {
+  font-size: 12px;
+  font-weight: normal;
+  font-family: Arial;
+}
+
+
+#bal-also-kep {
+  float: left;
+  width: 181px;
+  height: 205px;
+  margin-right: 20px;
+  padding: 4px 4px 4px 4px;
+  font-size: 12px;
+  line-height: 2;
+  border: 1px solid rgba(150,150,150,1);
+  background-color: rgba(247,247,247,1)
+}
+
+.kepalairas {
+  padding-left: 5px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+h3 {
+  font-family: Arial;
+  font-size: 16px;
+}
+
+
+ul {
+  margin-left: 20px;
+  color: rgba(6,69,173,1);
+}
+
+.kek-dolt-betu {
+  color: rgba(6,69,173,1);
+  font-style: italic;
+}
+
+.fekete-betu {
+  color: black;
+  font-style: normal;
+}
+
+
+#also-keret {
+  width: 100%;
+  border: 1px solid rgba(150,150,150,1);
+  background-color: rgba(247,247,247,1);
+}
+
+.also-menu {
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  color: rgba(150,150,150,1);
+}
+
+.al-menu-kek {
+  font-size: 14px;
+}
+
+footer {
+  margin-left: 177px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.lablec {
+  font-size: 11px;
+}
+
+.labmenu ol li {
+  font-size: 11px;
+  display: inline;
+  padding-right: 10px;
+}
+
+#jobb-also-kepek {
+  float: right;
+}
+</style>
+</head>
+<body>
+    <div id="fejlec1">    
+        <a class="fejlec1menu" href="#">Log in</a>
+        <a class="fejlec1menu" href="#">Create account</a>
+        <a class="fejlec1menu" href="#">Contributions</a>
+        <a class="fejlec1menu" href="#">Talk</a>
+        <p class="fejlec1menu" class="menu-betu">Not logged in</p>      
+  </div>
+  
+  
+  
+  <div id="fejlec2">
+
+    
+    <div id="fejlec2jobb">   
+      
+      <div id="kereso">
+         <div id="keresoletolas"></div>
+         <div class="keret"> 
+          <a class="nagyito" href="#">#</a>
+          <p class="search">Search</p>
+         </div>
+      </div>
+     
+      
+      
+
+      <div id="view">
+        <div id="menuletolas"></div>
+        <a href="#">View history</a> 
+      </div>
+       
+      <div id="edit">
+        <div id="menuletolas"></div>
+        <a href="#">Edit</a> 
+      </div>
+        
+      <div id="read">
+        <div id="menuletolas"></div>
+        <p class="menu-betu">Read</p>
+      </div>
+        
+ 
+    </div>  
+  
+    
+    
+    <div id="fejlec2bal"> 
+ 
+      <div id="ures-balsav"></div>
+      
+      <div id="article">
+        <div id="menuletolas"></div>
+        <p class="menu-betu">Article</p>
+      </div>
+      
+      <div id="talk">
+        <div id="menuletolas"></div>
+        <a href="#">Talk</a> 
+      </div>
+      
+    </div>    
+      
+  </div>
+   
+  
+  
+ 
+  
+
+  
+  
+  
+ <div id="fooldal">  
+   
+   
+  <div id="bal-oldal">
+    
+    <div id="logo">
+      <a href="#"><img class="wiki-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/2000px-Wikipedia-logo-v2-en.svg.png"></a>
+    </div>
+    
+    
+    <div id="fomenu">
+      <ol>
+        <li><a href="#">Main page</a></li>
+        <li><a href="#">Contents</a></li>
+        <li><a href="#">Featured content</a></li>
+        <li><a href="#">Current events</a></li>
+        <li><a href="#">Random article</a></li>
+        <li><a href="#">Donate to Wikipedia</a></li>
+        <li><a href="#">Wikipedia store</a></li>
+      </ol> 
+     </div>
+    
+    
+      <div class="sav"></div>
+       <div class="vonal">
+        <div class="feher-szurke"></div>
+        <div class="szurke"></div>
+        <div class="szurke-feher"></div>
+       </div>
+      <div class="sav"></div>
+    
+   
+    
+    
+      
+        <p class="almenu-cim">Interaction</p>
+      
+      <div class="almenu">
+      <ol>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">About Wikipedia</a></li>
+        <li><a href="#">Community portal</a></li>
+        <li><a href="#">Recent changes</a></li>
+        <li><a href="#">Contact page</a></li>
+      </ol> 
+      </div>
+    
+      <div class="sav"></div>
+       <div class="vonal">
+        <div class="feher-szurke"></div>
+        <div class="szurke"></div>
+        <div class="szurke-feher"></div>
+       </div>
+      <div class="sav"></div>
+   
+      
+        <p class="almenu-cim">Tools</p>
+      
+    
+      <div class="almenu">
+      <ol>
+        <li><a href="#">What links here</a></li>
+        <li><a href="#">Related changes</a></li>
+        <li><a href="#">Upload file</a></li>
+        <li><a href="#">Special pages</a></li>
+        <li><a href="#">Permanent link</a></li>
+        <li><a href="#">Page information</a></li>
+        <li><a href="#">Wikidata item</a></li>
+        <li><a href="#">Cite this page</a></li>
+      </ol> 
+      </div>
+    
+      <div class="sav"></div>
+       <div class="vonal">
+        <div class="feher-szurke"></div>
+        <div class="szurke"></div>
+        <div class="szurke-feher"></div>
+       </div>
+      <div class="sav"></div>
+
+    
+    
+        <p class="almenu-cim">Print/export</p>
+      
+    
+      <div class="almenu">
+      <ol>
+        <li><a href="#">Create a book</a></li>
+        <li><a href="#">Download as PDF</a></li>
+        <li><a href="#">Printable version</a></li>
+      </ol> 
+      </div>
+    
+      <div class="sav"></div>
+       <div class="vonal">
+        <div class="feher-szurke"></div>
+        <div class="szurke"></div>
+        <div class="szurke-feher"></div>
+       </div>
+      <div class="sav"></div>
+    
+     
+        <a class="fogaskerek" href="#">#</a>
+        <p class="almenu-cim">Languages</p>
+     
+      
+    <div class="almenu">
+      <a href="#">Español</a>
+    </div>
+    
+    <a class="editlinks" href="#">Edit links</a>
+      
+    </div>
+   
+   
+    
+    
+    <div id="jobb-oldal">
+      
+      
+      <h1>Communist Mutants from Space</h1>
+    
+      <div id="hosszu-vonal"></div>
+      
+      <p class="alcim">From Wikipedia, the free encyclopedia</p>
+      
+      <div id="uresbeszuras"></div>
+      
+      <div id="jobb-kep">
+        
+        <p class="dolt-vastag">Communist Mutants from Space</p>
+     
+        <figure>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Communist_Mutants_from_Space_cover.jpg/220px-Communist_Mutants_from_Space_cover.jpg"></a>
+          <figcaption>Cover art</figcaption>
+        </figure>
+        
+        <div id="kepmenu1">
+          <ol>
+            <li><a href="#">Developer(s)</a></li>
+            <li><a href="#">Platform(s)</a></li>
+            <li><p class="kep-menu-betu">Release date(s)</p></li>
+            <li><a href="#">Genre(s)</a></li>
+            <li><p class="kep-menu-betu">Mode(s)</p></li>
+          </ol>
+        </div>
+        
+        
+        <div id="kepmenu2">
+          <ol>
+            <li><a href="#">Starpath</a></li>
+            <li><a href="#">Atari 2600</a></li>
+            <li><a href="#">NA:</a><p class="folyamatos"> 1982</p></li>
+            <li><a href="#">Fixed shooter</a></li>
+            <li><a href="#">Single-player</a></li>
+          </ol>
+        </div>
+         
+      </div>
+
+      
+      <p><strong>Communist Mutants from Space</strong> is a<a href="#"> fixed shooter</a> video game created in<a href="#"> 1982</a> by<a href="#"> Starpath</a> (formerly known as Arcadia) for the<a href="#"> Atari 2600</a> home video game console and the<a href="#"> Starpath Supercharger</a> cassette accessory.<a class="kisindex" href="#">[1]</a></p>
+      
+      <div id="bal-felso-kep">
+        <p class="contents">Contents [<a class="vekony-betu" href="#">hide</a>]</p>
+         <ol>
+            <li><a href="#">1 Story</a></li>
+            <li><a href="#">2 Gameplay</a></li>
+            <li><a class="bekezdes" href="#">2.1	Game menu</a></li>
+            <li><a href="#">3 Easter egg</a></li>
+            <li><a href="#">4 References</a></li>
+            <li><a href="#">5 External links</a></li>
+         </ol>
+      </div>
+      
+      
+      <div id="uresbeszuras"></div>
+      <h2>Story <small> [<a href="#"> edit </a>]</small></h2>
+      <div id="hosszu-vonal"></div>
+      <div id="uresbeszuras"></div>
+      
+      <p>Aliens from the <a href="#"> communist</a> planet of Rooskee are invading peaceful, democratic planets and turning their inhabitants into "Communist Mutants." The communist mutant armies are controlled by the Mother Creature, a strange alien who has gone mad due to irradiated <a href="#"> vodka</a>.</p>
+      
+      
+      <div id="uresbeszuras"></div>
+      <h2>Gameplay <small> [<a href="#"> edit </a>]</small></h2>
+      <div id="hosszu-vonal"></div>
+      <div id="uresbeszuras"></div>
+      
+      
+      <div id="bal-also-kep">
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Commiemutants.png/180px-Commiemutants.png"></a>
+        <p class="kepalairas">The player must destroy the Mother Creature without being destroyed by the mutants and their bombs.</p>     
+      </div>
+      
+      <p>The player starts off with three reserve cannons. The object is to destroy the mutants aliens and, most importantly, the Mother Creature. The mutants hatch from moving eggs at the top of the screen. Because the Mother Creature replenishes eggs when they hatch or are destroyed, it must be defeated before the player can advance to the next wave. If a mutant or a bomb thrown by a mutant comes into contact with the cannon, the cannon will be destroyed and a reserve must be called up. A new cannon is awarded on every other wave.</p>
+      
+      <div id="uresbeszuras"></div>
+      <h3>Game menu <small> [<a href="#"> edit </a>]</small></h3>
+      <div id="uresbeszuras"></div>
+      
+      <p>The menu allows a variety of gameplay changes; for example, the player may toggle the shield option on or off. If activated, "shield" mode allowed a player to press down on the joystick to become invincible for a short period (only one shield was allotted per level). Another feature was the "time warp," which allowed the player to press up on the joystick to temporarily slow down the passage of time for his opponents (i.e., they move slower than usual). Additionally, the type of shot fired could be changed by activating the "penetrating fire" option (which enhanced the beam fired so that it could withstand hitting two mutants rather than a single one) and/or the "guided fire" option (which caused the beam to be moved with the joystick rather than firing in a straight line).</p>
+  
+      <div id="menuletolas"></div>
+   
+      <p>The menu also allowed for multiple players (up to four) to be entered into the game. Players one and three shared the first joystick while players two and four shared the second.</p>
+   
+   
+      <div id="uresbeszuras"></div>
+      <h2>Easter egg <small> [<a href="#"> edit </a>]</small></h2>
+      <div id="hosszu-vonal"></div>
+      <div id="uresbeszuras"></div>
+      
+      <p>Steven H. Landrum, the project's programmer, hid an <a href="#"> ester egg</a> in the game in which holding fire during power-on of the Atari 2600 would cause the "HI" on the high scores screen to change to "SHL." <a class="kisindex" href="#">[2]</a></p>
+   
+      <div id="uresbeszuras"></div>
+      <h2>References <small> [<a href="#"> edit </a>]</small></h2>
+      <div id="hosszu-vonal"></div>
+      <div id="menuletolas"></div>
+      
+  
+       <p>1. <a href="#">^</a> <a href="#">I break for Arcadians:Entertainment abounds in a gaggle of games</a>, Page 26, InfoWorld, 27 Jun 1983,</p>
+       <p>2. <a href="#">^</a> Federico, Chris. <a href="#">"The Complete 2600 Easter Egg Archive".</a> Orphaned Computers & Game Systems. Retrieved 2007-12-28.<a class="kisindex" href="#">[dead link]</a></p>
+      
+      
+       <div id="uresbeszuras"></div>
+       <h2>External links <small> [<a href="#"> edit </a>]</small></h2>
+       <div id="hosszu-vonal"></div>
+       <div id="menuletolas"></div>
+      
+      <ul>
+        <li><p class="fekete-betu"><a class="kek-dolt-betu" href="#">Communist Mutants from Space</a> at <a href="#">AtariAge</a></p></li>
+        <li><p class="fekete-betu"><a class="kek-dolt-betu" href="#">Communist Mutants from Space</a> at <a href="#">GameFAQs</a></p></li>
+      </ul>
+      
+      <div id="uresbeszuras"></div>
+      
+      
+      <div id="also-keret">
+        <p class="also-menu"><a class="al-menu-kek" href="#">Categories:</a> <a class="al-menu-kek" href="#">1982 video games</a> | <a class="al-menu-kek" href="#">Atari 2600 games</a> | <a class="al-menu-kek" href="#">Cold War video games</a> | <a class="al-menu-kek" href="#">Fixed shooters</a> | <a class="al-menu-kek" href="#">North America-exclusive video games</a> | <a class="al-menu-kek" href="#">Starpath games</a></p>
+      </div>
+      
+      
+      <div id="uresbeszuras"></div>
+      
+      
+   </div>
+   
+   <div id="uresbeszuras"></div>
+   
+   <footer>
+     <p class="lablec">This page was last modified on 10 June 2016, at 19:17.</p>
+     <div id="menuletolas"></div>
+     <p class="lablec">Text is available under the <a href="#">Creative Commons Attribution-ShareAlike License</a>; additional terms may apply. By using this site, you agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="#">Wikimedia Foundation, Inc.</a>, a non-profit organization.</p>
+     <div id="uresbeszuras"></div>
+     
+     <div id="jobb-also-kepek">
+       <a href="#"><img src="https://en.wikipedia.org/static/images/wikimedia-button.png"</a>
+       <a href="#"><img src="https://en.wikipedia.org/static/images/poweredby_mediawiki_88x31.png"</a>
+     </div>
+     
+     <div class="labmenu">
+       <ol>
+         <li><a href="#">Privacy policy</a></li>
+         <li><a href="#">About Wikipedia</a></li>
+         <li><a href="#">Disclaimers</a></li>
+         <li><a href="#">Contact Wikipedia</a></li>
+         <li><a href="#">Developers</a></li>
+         <li><a href="#">Cookie statement</a></li>
+         <li><a href="#">Mobile view</a></li>
+       </ol>
+       
+      <div id="uresbeszuras"></div> 
+       
+       
+    </footer>
+         
+         
+   <div id="uresbeszuras"></div>  
+   
+      
+</div>  
+</body>
+</html>

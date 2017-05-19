@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by WZoltan (http://jsbin.com/lakoqu/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+var allTurbines = 25;
+var turbinePower = 2000;
+var sumPower = 0 ;
+var turbineCounter = 1;
+
+
+for (turbineCounter; turbineCounter <= allTurbines; turbineCounter++){
+  if(turbineCounter<=10)  { 
+    turbinePower = 2000;
+    sumPower +=turbinePower;
+    console.log('A(z) ' + turbineCounter + '. számú szélturbina teljes fordulaton működik, ' 
+              + turbinePower + 
+              ' MWh áramot termelve. A farm összteljesítménye jelenleg ' + sumPower + ' MWh.');
+
+} else if (turbineCounter <= 20){
+    turbinePower = 1000;
+    sumPower +=turbinePower;
+    console.log('A(z) ' + turbineCounter + '. számú szélturbina fél fordulaton működik, ' 
+              + (turbinePower/2) + 
+              ' MWh áramot termelve. A farm összteljesítménye jelenleg ' + sumPower + ' MWh.');
+
+} else {
+    turbinePower = 0;
+    sumPower +=turbinePower;
+    console.log('A(z) ' + turbineCounter + '. számú szélturbina áll, '
+              + (turbinePower-turbinePower) + 
+              ' MWh áramot termelve. A farm összteljesítménye jelenleg  ' + sumPower + ' MWh.');
+}
+} 
+</script>
+</body>
+</html>

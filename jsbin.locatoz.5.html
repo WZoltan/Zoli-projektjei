@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by WZoltan (http://jsbin.com/locatoz/5/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+{padding:0,20%;}
+img {
+width: 200 px;
+}
+.hide {
+    display: none;
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>Javascript Events<h1>
+    </header>
+    <main>
+        <h4>Add Numbers:<h4>
+            <p>
+                <input id="num-one"> + <input id="num-two">
+                </p>
+                    <p id="ad-sum"></p>
+          
+          
+<h4>Pictures<h4>
+ <ul>
+     <li><a data-img="simon-pic" id="simon" href="#">Simon Cowell</a></li>
+ <li><a data-img="bruce-pic" id="bruce" href="#">Bruce Willis</a></li>    
+ <li><a data-img="ben-pic" id="ben" href="#">Ben Carson</a></li>     
+ </ul>  
+  <img class="hide" id="simon-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Simon_Cowell_in_December_2011.jpg/220px-Simon_Cowell_in_December_2011.jpg">
+  <img class="hide" id="bruce-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Bruce_Willis_by_Gage_Skidmore_2.jpg/250px-Bruce_Willis_by_Gage_Skidmore_2.jpg">  <img class="hide" id="ben-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Ben_Carson_by_Gage_Skidmore.jpg/220px-Ben_Carson_by_Gage_Skidmore.jpg">
+     
+    </main>
+    <!--
+     <script src="events.js"></script>
+      -->            
+          
+          
+<script id="jsbin-javascript">
+
+var simon = document.getElementById("simon");
+var simonPic = document.getElementById("simon-pic");
+
+/*
+var simon.addEventListener("click",show);
+*/
+
+simon.addEventListener("click", function() {
+  if (simonPic.className === "hide") {
+    simonPic.className = "";
+  } else {
+  simonPic.className = "hide";
+  }
+});
+
+var bruce = document.getElementById("bruce");
+var brucePic = document.getElementById("bruce-pic");
+
+/*
+var bruce.addEventListener("click",show);
+*/
+
+bruce.addEventListener("click", function() {
+  if (brucePic.className === "hide") {
+    brucePic.className = "";
+  } else {
+  brucePic.className = "hide";
+  }
+});
+
+var ben = document.getElementById("ben");
+var benPic = document.getElementById("ben-pic");
+
+/*
+var ben.addEventListener("click",show);
+*/
+
+ben.addEventListener("click", function() {
+  if (benPic.className === "hide") {
+    benPic.className = "";
+  } else {
+  benPic.className = "hide";
+  }
+});
+  
+/*
+simon.addEventListener("click", picLink);
+function picLink() {
+console.log(this)
+}function picLink() {
+var picId = this.attributes
+var pic = document.getElementById
+}
+function picLink() {
+var picId = this.attributes("data-img").value;
+var pic = document.getElementById(picId);
+if (pic.classname === "hide") {
+pic.className = "";
+} else {
+pic.className = "hide";
+}
+    
+
+*/
+</script>
+</body>
+</html>
